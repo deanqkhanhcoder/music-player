@@ -1,4 +1,4 @@
-# music-player
+# Music Player credit @deanqkhanhcoder
 This project is built with .
 
 - Vite
@@ -6,3 +6,4 @@ This project is built with .
 - React
 - shadcn-ui
 - Tailwind CSS
+[TikTok](https://www.tiktok.com/@deanqkhanh)

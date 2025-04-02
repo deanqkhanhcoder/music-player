@@ -6,4 +6,5 @@ This project is built with .
 - React
 - shadcn-ui
 - Tailwind CSS
-[TikTok](https://www.tiktok.com/@deanqkhanh)
+
+[@deanqkhanh](https://www.tiktok.com/@deanqkhanh)

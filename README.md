@@ -22,7 +22,7 @@ Một ứng dụng web hiện đại được xây dựng với React, TypeScrip
 git clone https://github.com/deanqkhanhcoder/music-player.git
 
 # Di chuyển vào thư mục dự án
-cd music-project
+cd music-player
 
 # Cài đặt dependencies
 npm install

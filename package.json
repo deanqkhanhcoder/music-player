@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://deanqkhanh.github.io/music-player",
+  "homepage": "https://deanqkhanhcoder.github.io/music-project",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

@@ -1,0 +1,180 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 20% 98%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 210 100% 50%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+    
+    --player-background: 0 0% 100%;
+    --player-foreground: 222 47% 11%;
+    --player-accent: 210 100% 50%;
+    --player-muted: 220 13% 91%;
+    --player-control: 220 14% 96%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    
+    --player-background: 222 47% 11%;
+    --player-foreground: 0 0% 100%;
+    --player-accent: 210 100% 50%;
+    --player-muted: 220 13% 20%;
+    --player-control: 220 14% 20%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border transition-colors duration-200;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer components {
+  .music-player-container {
+    @apply max-w-4xl mx-auto my-8 p-6 sm:p-8 bg-player-background rounded-xl shadow-lg ring-1 ring-black/5;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .music-player-container:hover {
+    @apply shadow-xl;
+    transform: translateY(-2px);
+  }
+
+  .player-controls {
+    @apply flex items-center justify-center space-x-2 sm:space-x-4 my-4;
+  }
+
+  .control-button {
+    @apply flex items-center justify-center w-10 h-10 rounded-full bg-player-control text-player-foreground transition-all duration-300;
+  }
+
+  .control-button:hover {
+    @apply bg-player-accent text-white transform scale-105;
+  }
+
+  .control-button-primary {
+    @apply w-12 h-12 bg-player-accent text-white;
+  }
+
+  .progress-bar {
+    @apply relative h-2 rounded-full bg-player-muted overflow-hidden;
+  }
+
+  .progress-bar-fill {
+    @apply absolute top-0 left-0 h-full bg-player-accent transition-all;
+  }
+
+  .playlist-item {
+    @apply flex items-center p-3 rounded-md mb-2 hover:bg-player-muted/50 transition-all;
+  }
+
+  .playlist-item.active {
+    @apply bg-player-muted;
+  }
+
+  .track-info {
+    @apply text-center mb-6;
+  }
+
+  .track-title {
+    @apply text-xl font-medium mb-1;
+  }
+
+  .track-artist {
+    @apply text-sm text-muted-foreground;
+  }
+
+  .visualizer-bar {
+    @apply bg-player-accent rounded-full w-1;
+    height: 20px;
+    animation: wave 1.2s ease-in-out infinite;
+    transform-origin: bottom;
+  }
+  
+  .visualizer-container {
+    @apply flex items-end justify-center space-x-1 h-8 my-2;
+  }
+
+  .waveform-container {
+    @apply h-24 w-full rounded-md overflow-hidden bg-player-muted/30 my-4;
+  }
+  
+  .volume-slider {
+    @apply w-24 sm:w-32;
+  }
+  
+  .glass-effect {
+    @apply bg-white/80 backdrop-blur-md dark:bg-black/80;
+  }
+}
+
+.visualizer-bar:nth-child(1) { animation-delay: -0.4s; }
+.visualizer-bar:nth-child(2) { animation-delay: -0.3s; }
+.visualizer-bar:nth-child(3) { animation-delay: -0.2s; }
+.visualizer-bar:nth-child(4) { animation-delay: -0.1s; }
+.visualizer-bar:nth-child(5) { animation-delay: 0s; }
+.visualizer-bar:nth-child(6) { animation-delay: -0.1s; }
+.visualizer-bar:nth-child(7) { animation-delay: -0.2s; }
+.visualizer-bar:nth-child(8) { animation-delay: -0.3s; }
+.visualizer-bar:nth-child(9) { animation-delay: -0.4s; }

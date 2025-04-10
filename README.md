@@ -1,6 +1,6 @@
 # Harmony App - Ứng dụng Nghe Nhạc
 
-![Harmony App Logo](public/og-image.png)
+![Harmony App Logo](public/favicon.ico)
 
 ## Giới Thiệu
 

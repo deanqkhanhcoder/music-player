@@ -108,7 +108,7 @@ Dự án này được phân phối theo giấy phép MIT. Xem file `LICENSE` đ
 
 ## Tác Giả
 
-- **@deanqkhanh**
+- **@deanqkhanhcoder**
 
 ---
 
